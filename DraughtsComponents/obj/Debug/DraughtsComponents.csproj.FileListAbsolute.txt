@@ -1,0 +1,6 @@
+C:\Users\timoh\OneDrive\Рабочий стол\DraughtsComponents\bin\Debug\DraughtsComponents.dll
+C:\Users\timoh\OneDrive\Рабочий стол\DraughtsComponents\bin\Debug\DraughtsComponents.pdb
+C:\Users\timoh\OneDrive\Рабочий стол\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.AssemblyReference.cache
+C:\Users\timoh\OneDrive\Рабочий стол\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.CoreCompileInputs.cache
+C:\Users\timoh\OneDrive\Рабочий стол\DraughtsComponents\obj\Debug\DraughtsComponents.dll
+C:\Users\timoh\OneDrive\Рабочий стол\DraughtsComponents\obj\Debug\DraughtsComponents.pdb
