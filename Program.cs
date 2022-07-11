@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DraughtsComponents;
+namespace Draughts_v2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Player player = new Player("Tim",'w', 1,1);
+            
+            
+
+        }
+    }
+}
