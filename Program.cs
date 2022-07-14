@@ -8,7 +8,7 @@ namespace Draughts_v2
 {
     internal class Program
     {
-
+        
         static int ChooseDirection()
         {
             Console.WriteLine("1. Вверх вправо");
@@ -23,15 +23,16 @@ namespace Draughts_v2
             } while (choise <= 0 || choise > 4);
             return choise;
         }
-        static bool PlayerTurn(Player player, Player player2, Field field)
+        static bool PlayerTurn(Player player, Player player2)
         {
             ConsoleKey key;
-            field.PrintField(player.arr[player.GetChoosenDraughtIndex()]);
+            int choosenIndex = player.GetChoosenDraughtIndex();
+            Player.PlayingField.PrintField(player.arr[choosenIndex]);
             key = Console.ReadKey().Key;
             if (key == ConsoleKey.Enter)
             {
                 int choise=ChooseDirection();
-
+                player.MooveDraught((Player.Draught._direction)choise-1, ref player.arr[choosenIndex]);
                 Console.Clear();
                 return false;
             }
@@ -46,22 +47,30 @@ namespace Draughts_v2
         static void Main(string[] args)
         {
             
-            Player player = new Player("Tim", 'w', 1, 0);
+            Player player = new Player("Tim", 'w', 0, 5);
            
-            Player player2 = new Player("Makar", 'b', 0, 5);
+            Player player2 = new Player("Makar", 'b', 1, 0);
            
-            Field field = new Field(player.arr, player2.arr);
-           
+            Player.PlayingField = new Field(player.arr, player2.arr);
+            Player.PlayingField.DeployDraughts(player.arr, player2.arr);
             while (true)
             {
-                while(PlayerTurn(player,player2, field))
+                while(PlayerTurn(player,player2))
                 {
                     
                 }
-                while (PlayerTurn(player2, player, field))
+                //Player.PlayingField.Reverse();
+                player.Reverse();
+                player2.Reverse();
+                Player.PlayingField.DeployDraughts(player.arr,player2.arr);
+                while (PlayerTurn(player2, player))
                 {
-
+                   
                 }
+                player.Reverse();
+                player2.Reverse();
+                Player.PlayingField.DeployDraughts(player.arr, player2.arr);
+                //Player.PlayingField.Reverse();
             }
             
            
