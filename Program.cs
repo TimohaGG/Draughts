@@ -59,18 +59,20 @@ namespace Draughts_v2
                 {
                     
                 }
-                //Player.PlayingField.Reverse();
+               
                 player.Reverse();
                 player2.Reverse();
                 Player.PlayingField.DeployDraughts(player.arr,player2.arr);
+                player2.ReverseArr();
                 while (PlayerTurn(player2, player))
                 {
                    
                 }
                 player.Reverse();
                 player2.Reverse();
+                player2.ReverseArr();
                 Player.PlayingField.DeployDraughts(player.arr, player2.arr);
-                //Player.PlayingField.Reverse();
+                
             }
             
            
