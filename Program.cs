@@ -8,7 +8,21 @@ namespace Draughts_v2
 {
     internal class Program
     {
-        
+
+        static int ChooseDirection()
+        {
+            Console.WriteLine("1. Вверх вправо");
+            Console.WriteLine("2. Вверх влево");
+            Console.WriteLine("3. Вниз вправо");
+            Console.WriteLine("4. Вниз влево");
+            int choise;
+            do
+            {
+                Console.WriteLine("Введите цыфру");
+                int.TryParse(Console.ReadLine(), out choise);
+            } while (choise <= 0 || choise > 4);
+            return choise;
+        }
         static bool PlayerTurn(Player player, Player player2, Field field)
         {
             ConsoleKey key;
@@ -16,6 +30,8 @@ namespace Draughts_v2
             key = Console.ReadKey().Key;
             if (key == ConsoleKey.Enter)
             {
+                int choise=ChooseDirection();
+
                 Console.Clear();
                 return false;
             }
