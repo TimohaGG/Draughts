@@ -27,14 +27,31 @@ namespace Draughts_v2
         {
             ConsoleKey key;
             int choosenIndex = player.GetChoosenDraughtIndex();
-            Player.PlayingField.PrintField(player.arr[choosenIndex]);
+            Player.PrintField(player.arr[choosenIndex]);
             key = Console.ReadKey().Key;
             if (key == ConsoleKey.Enter)
             {
                 int choise=ChooseDirection();
-                player.MooveDraught((Player.Draught._direction)choise-1, ref player.arr[choosenIndex]);
-                Console.Clear();
-                return false;
+                if (player.arr[choosenIndex].isMovable((Player.Draught._direction)choise - 1, player, player2.skin))
+                {
+                    player.MooveDraught((Player.Draught._direction)choise - 1, ref player.arr[choosenIndex]);
+                    Console.Clear();
+                    Player.PlayingField.DeployDraughts(player.arr, player2.arr);
+                    Player.PrintField(player.arr[choosenIndex]);
+                    Console.WriteLine("Нажмите Enter что бы продолжить!");
+                    Console.ReadLine();
+                    Console.Clear();
+                    return false;
+                }
+                else
+                {
+                    Console.WriteLine("Этот путь недоступен!");
+                    Console.WriteLine("Нажмите Enter что бы продолжить!");
+                    Console.ReadLine();
+                    Console.Clear();
+                    return true;
+                }
+                
             }
             else
             {
@@ -59,7 +76,7 @@ namespace Draughts_v2
                 {
                     
                 }
-               
+                
                 player.Reverse();
                 player2.Reverse();
                 Player.PlayingField.DeployDraughts(player.arr,player2.arr);

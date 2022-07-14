@@ -50,7 +50,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DraughtsComponents\DraughtsComponents.csproj">
+    <ProjectReference Include="DraughtsComponents\DraughtsComponents.csproj">
       <Project>{d0684243-62bd-4b51-931c-8cf272949833}</Project>
       <Name>DraughtsComponents</Name>
     </ProjectReference>

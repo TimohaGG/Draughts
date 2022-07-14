@@ -43,9 +43,10 @@ namespace DraughtsComponents
                 {
                     case _direction.UP_R:
                         {
-                            
 
-                            if (field[y - 1, x + 1] == '-')
+                            if (y - 1 < 0 || x + 1 > Field.fieldSize)
+                                return false;
+                            else if (field[y - 1, x + 1] == '-')
                                 return true;
                             else if (field[y - 1, x + 1] == EnemySymbol && field[y - 2, x + 2] == '-')
                                 return true;
@@ -54,7 +55,14 @@ namespace DraughtsComponents
                         }
                     case _direction.UP_L:
                         {
-
+                            if (y - 1 < 0 || x - 1 < 0)
+                                return false;
+                            else if (field[y - 1, x - 1] == '-')
+                                return true;
+                            else if (field[y - 1, x - 1] == EnemySymbol && field[y - 2, x - 2] == '-')
+                                return true;
+                            else
+                                return false;
                         }
                         break;
                     case _direction.DOWN_R:

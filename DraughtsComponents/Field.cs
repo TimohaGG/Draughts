@@ -47,25 +47,25 @@ namespace DraughtsComponents
                 fieldArr[arr2[i].y, arr2[i].x] = arr2[i].skin;
             }
         }
-        public void PrintField(Player.Draught choosen)
-        {
-            for (int i = 0; i < fieldSize; i++)
-            {
-                for (int j = 0; j < fieldSize; j++)
-                {
-                    if (i == choosen.y && j == choosen.x)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.Write(fieldArr[i, j]+" ");
-                        Console.ResetColor();
-                    }
-                    else
-                        Console.Write(fieldArr[i,j]+" ");
-                }
-                Console.WriteLine();
-            }
+        //public void PrintField(Player.Draught choosen)
+        //{
+        //    for (int i = 0; i < fieldSize; i++)
+        //    {
+        //        for (int j = 0; j < fieldSize; j++)
+        //        {
+        //            if (i == choosen.y && j == choosen.x)
+        //            {
+        //                Console.ForegroundColor = ConsoleColor.Green;
+        //                Console.Write(fieldArr[i, j]+" ");
+        //                Console.ResetColor();
+        //            }
+        //            else
+        //                Console.Write(fieldArr[i,j]+" ");
+        //        }
+        //        Console.WriteLine();
+        //    }
             
-        }
+        //}
 
         public char[,] Reverse()
         {

@@ -15,6 +15,7 @@ namespace DraughtsComponents
         private const int draughtsAmount=12;
         public Draught[] arr=new Draught[draughtsAmount];
         public string name;
+        public char skin;
         static public Field PlayingField;
 
         //----------constructor----------
@@ -43,9 +44,29 @@ namespace DraughtsComponents
                 }
             }
             this.name = name;
+            this.skin = skin;
             arr[0].isChoosen = true;
         }
         //---------methods----------
+
+        static public void PrintField(Draught choosen)
+        {
+            for (int i = 0; i < Field.fieldSize; i++)
+            {
+                for (int j = 0; j < Field.fieldSize; j++)
+                {
+                    if (i == choosen.y && j == choosen.x)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write(PlayingField.fieldArr[i, j] + " ");
+                        Console.ResetColor();
+                    }
+                    else
+                        Console.Write(PlayingField.fieldArr[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
         public bool isKill(Draught[] arrEnemy)
         {
             for (int i = 0; i < draughtsAmount; i++)
