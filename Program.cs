@@ -64,31 +64,31 @@ namespace Draughts_v2
         static void Main(string[] args)
         {
             
-            Player player = new Player("Tim", 'w', 0, 5);
+            Player player1 = new Player("Tim", 'w', 0, 5);
            
             Player player2 = new Player("Makar", 'b', 1, 0);
            
-            Player.PlayingField = new Field(player.arr, player2.arr);
-            Player.PlayingField.DeployDraughts(player.arr, player2.arr);
+            Player.PlayingField = new Field(player1.arr, player2.arr);
+            Player.PlayingField.DeployDraughts(player1.arr, player2.arr);
             while (true)
             {
-                while(PlayerTurn(player,player2))
+                while(PlayerTurn(player1,player2))
                 {
                     
                 }
                 
-                player.Reverse();
+                player1.Reverse();
                 player2.Reverse();
-                Player.PlayingField.DeployDraughts(player.arr,player2.arr);
+                Player.PlayingField.DeployDraughts(player1.arr,player2.arr);
                 player2.ReverseArr();
-                while (PlayerTurn(player2, player))
+                while (PlayerTurn(player2, player1))
                 {
                    
                 }
-                player.Reverse();
+                player1.Reverse();
                 player2.Reverse();
                 player2.ReverseArr();
-                Player.PlayingField.DeployDraughts(player.arr, player2.arr);
+                Player.PlayingField.DeployDraughts(player1.arr, player2.arr);
                 
             }
             
