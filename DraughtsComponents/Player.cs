@@ -12,14 +12,15 @@ namespace DraughtsComponents
         public partial class Draught{}
 
         //----------fields/props----------
-        private const int draughtsAmount=12;
-        public Draught[] arr=new Draught[draughtsAmount];
+        public int draughtsAmount=12;
+        public Draught[] arr;
         public string name;
         public char skin;
         static public Field PlayingField;
 
         //----------constructor----------
         public Player(string name, char skin, int x, int y) {
+            arr=new Draught[draughtsAmount];
             bool isEven;
             if (x == 0) isEven = true;
             else isEven = false;
@@ -95,7 +96,8 @@ namespace DraughtsComponents
                 if(arr[i].isChoosen)
                     return i;
             }
-            throw new Exception("Invalid index!!");
+            arr[0].isChoosen = true;
+            return 0;
         }
 
         public Draught[] MoveSelection(ConsoleKey direction)
@@ -175,7 +177,34 @@ namespace DraughtsComponents
         public void ReverseArr()
         {
             Array.Reverse(arr);
-           
+        }
+
+        public void DeleteDraughtFromArr( Draught draught)
+        {
+            int index;
+            for (index = 0; index < draughtsAmount; index++)
+            {
+                if (arr[index].x == draught.x && arr[index].y == draught.y)
+                {
+                    Console.WriteLine("Нашел кого удалять!");
+                    break;
+                }
+            }
+            var tmp = new List<Draught>(arr); // Преобразование в список
+            tmp.RemoveAt(index); // Удаление элемента
+            arr = tmp.ToArray(); // Преобразование в массив
+            draughtsAmount--;
+            if (draught.isChoosen == true)
+                arr[0].isChoosen = true;
+        }
+        public void ResetChoosenIndex()
+        {
+            int currentIndex = GetChoosenDraughtIndex();
+            if (currentIndex == -1)
+            {
+                arr[0].isChoosen = true;
+            }
+
         }
     }
 }

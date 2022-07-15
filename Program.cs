@@ -8,7 +8,12 @@ namespace Draughts_v2
 {
     internal class Program
     {
-        
+        static void Pause()
+        {
+            Console.WriteLine("Нажмите Enter что бы продолжить!");
+            Console.ReadLine();
+            Console.Clear();
+        }
         static int ChooseDirection()
         {
             Console.WriteLine("1. Вверх вправо");
@@ -31,24 +36,27 @@ namespace Draughts_v2
             key = Console.ReadKey().Key;
             if (key == ConsoleKey.Enter)
             {
-                int choise=ChooseDirection();
-                if (player.arr[choosenIndex].isMovable((Player.Draught._direction)choise - 1, player, player2.skin))
+                //int choise=ChooseDirection();
+                Player.Draught._direction choise=(Player.Draught._direction) ChooseDirection();
+                if (player.arr[choosenIndex].isMovable(choise - 1, player, player2.skin))
                 {
-                    player.MooveDraught((Player.Draught._direction)choise - 1, ref player.arr[choosenIndex]);
+                    player.MooveDraught(choise - 1, ref player.arr[choosenIndex]);
+                    if (player.isKill(player2.arr))
+                    {
+                        player2.DeleteDraughtFromArr(player.arr[choosenIndex]);
+                        //player2.ResetChoosenIndex();
+                        player.MooveDraught(choise - 1, ref player.arr[choosenIndex]);
+                    }
                     Console.Clear();
                     Player.PlayingField.DeployDraughts(player.arr, player2.arr);
                     Player.PrintField(player.arr[choosenIndex]);
-                    Console.WriteLine("Нажмите Enter что бы продолжить!");
-                    Console.ReadLine();
-                    Console.Clear();
+                    Pause();
                     return false;
                 }
                 else
                 {
                     Console.WriteLine("Этот путь недоступен!");
-                    Console.WriteLine("Нажмите Enter что бы продолжить!");
-                    Console.ReadLine();
-                    Console.Clear();
+                    Pause();
                     return true;
                 }
                 
@@ -79,17 +87,21 @@ namespace Draughts_v2
                 
                 player1.Reverse();
                 player2.Reverse();
-                Player.PlayingField.DeployDraughts(player1.arr,player2.arr);
+                
                 player2.ReverseArr();
+                player1.ReverseArr();
+                Player.PlayingField.DeployDraughts(player1.arr, player2.arr);
                 while (PlayerTurn(player2, player1))
                 {
                    
                 }
                 player1.Reverse();
                 player2.Reverse();
-                player2.ReverseArr();
-                Player.PlayingField.DeployDraughts(player1.arr, player2.arr);
                 
+                player2.ReverseArr();
+                player1.ReverseArr();
+
+                Player.PlayingField.DeployDraughts(player1.arr, player2.arr);
             }
             
            

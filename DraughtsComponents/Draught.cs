@@ -66,9 +66,23 @@ namespace DraughtsComponents
                         }
                         break;
                     case _direction.DOWN_R:
-                        break;
+                        {
+                            if (y + 2 >= Field.fieldSize || x + 2 >= Field.fieldSize)
+                                return false;
+                            else if (field[y + 1, x + 1] == EnemySymbol && field[y + 2, x + 2] == '-')
+                                return true;
+                            else return false;
+                        }
+                        
                     case _direction.DOWN_L:
-                        break;
+                        {
+                            if(y+2 >= Field.fieldSize || x - 2<0)
+                                return false;
+                            if (field[y + 1, x - 1] == EnemySymbol && field[y + 2, x - 1] == '-')
+                                return true;
+                            else return false;
+                        }
+                        
                     default:
                         break;
                 }

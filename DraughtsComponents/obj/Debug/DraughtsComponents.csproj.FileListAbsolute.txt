@@ -10,3 +10,9 @@ C:\Users\timoh\OneDrive\Документы\GitHub\Draughts-v2\DraughtsComponents
 C:\Users\timoh\OneDrive\Документы\GitHub\Draughts-v2\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.CoreCompileInputs.cache
 C:\Users\timoh\OneDrive\Документы\GitHub\Draughts-v2\DraughtsComponents\obj\Debug\DraughtsComponents.dll
 C:\Users\timoh\OneDrive\Документы\GitHub\Draughts-v2\DraughtsComponents\obj\Debug\DraughtsComponents.pdb
+C:\Users\timoh\OneDrive\Документы\Draught\DraughtsComponents\bin\Debug\DraughtsComponents.dll
+C:\Users\timoh\OneDrive\Документы\Draught\DraughtsComponents\bin\Debug\DraughtsComponents.pdb
+C:\Users\timoh\OneDrive\Документы\Draught\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.AssemblyReference.cache
+C:\Users\timoh\OneDrive\Документы\Draught\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.CoreCompileInputs.cache
+C:\Users\timoh\OneDrive\Документы\Draught\DraughtsComponents\obj\Debug\DraughtsComponents.dll
+C:\Users\timoh\OneDrive\Документы\Draught\DraughtsComponents\obj\Debug\DraughtsComponents.pdb
