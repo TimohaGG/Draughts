@@ -46,7 +46,7 @@ namespace DraughtsComponents
             }
             this.name = name;
             this.skin = skin;
-            arr[0].isChoosen = true;
+            arr[0].IsChoosen = true;
         }
         //---------methods----------
 
@@ -68,7 +68,7 @@ namespace DraughtsComponents
                 Console.WriteLine();
             }
         }
-        public bool isKill(Draught[] arrEnemy)
+        public bool IsKill(Draught[] arrEnemy)
         {
             for (int i = 0; i < draughtsAmount; i++)
             {
@@ -93,10 +93,10 @@ namespace DraughtsComponents
         {
             for (int i = 0; i < draughtsAmount; i++)
             {
-                if(arr[i].isChoosen)
+                if(arr[i].IsChoosen)
                     return i;
             }
-            arr[0].isChoosen = true;
+            arr[0].IsChoosen = true;
             return 0;
         }
 
@@ -110,32 +110,32 @@ namespace DraughtsComponents
                     {
                         if (indexTmp + 4 < draughtsAmount)
                         {
-                            (arr[indexTmp].isChoosen, arr[indexTmp + 4].isChoosen) =
-                               (arr[indexTmp + 4].isChoosen, arr[indexTmp].isChoosen);
+                            (arr[indexTmp].IsChoosen, arr[indexTmp + 4].IsChoosen) =
+                               (arr[indexTmp + 4].IsChoosen, arr[indexTmp].IsChoosen);
                         }
                     }break;
                 case ConsoleKey.UpArrow:
                     {
                         if(indexTmp - 4 >= 0)
                         {
-                            (arr[indexTmp].isChoosen, arr[indexTmp - 4].isChoosen) =
-                               (arr[indexTmp - 4].isChoosen, arr[indexTmp].isChoosen);
+                            (arr[indexTmp].IsChoosen, arr[indexTmp - 4].IsChoosen) =
+                               (arr[indexTmp - 4].IsChoosen, arr[indexTmp].IsChoosen);
                         }
                     }break;
                 case ConsoleKey.LeftArrow:
                     {
                         if (indexTmp - 1 >= 0)
                         {
-                            (arr[indexTmp].isChoosen, arr[indexTmp - 1].isChoosen) =
-                                (arr[indexTmp - 1].isChoosen, arr[indexTmp].isChoosen);
+                            (arr[indexTmp].IsChoosen, arr[indexTmp - 1].IsChoosen) =
+                                (arr[indexTmp - 1].IsChoosen, arr[indexTmp].IsChoosen);
                         }
                     }break;
                 case ConsoleKey.RightArrow:
                     {
                         if (indexTmp + 1 < draughtsAmount)
                         {
-                            (arr[indexTmp].isChoosen, arr[indexTmp + 1].isChoosen) =
-                                (arr[indexTmp + 1].isChoosen, arr[indexTmp].isChoosen);
+                            (arr[indexTmp].IsChoosen, arr[indexTmp + 1].IsChoosen) =
+                                (arr[indexTmp + 1].IsChoosen, arr[indexTmp].IsChoosen);
                         }
                     }break;
                 
@@ -143,23 +143,23 @@ namespace DraughtsComponents
             return arr;
         }
 
-        public void MooveDraught(Draught._direction direction, ref Draught draught)
+        public void MooveDraught(Draught.Direction direction, ref Draught draught)
         {
             switch (direction)
             {
-                case Draught._direction.UP_R:
+                case Draught.Direction.UP_R:
                     draught.y--;
                     draught.x++;
                     break;
-                case Draught._direction.UP_L:
+                case Draught.Direction.UP_L:
                     draught.y--;
                     draught.x--;
                     break;
-                case Draught._direction.DOWN_R:
+                case Draught.Direction.DOWN_R:
                     draught.y++;
                     draught.x++;
                     break;
-                case Draught._direction.DOWN_L:
+                case Draught.Direction.DOWN_L:
                     draught.y++;
                     draught.x--;
                     break;
@@ -198,8 +198,8 @@ namespace DraughtsComponents
             {
                 return false;
             }
-            if (draught.isChoosen == true)
-                arr[0].isChoosen = true;
+            if (draught.IsChoosen == true)
+                arr[0].IsChoosen = true;
             return true;
         }
         public void ResetChoosenIndex()
@@ -207,7 +207,7 @@ namespace DraughtsComponents
             int currentIndex = GetChoosenDraughtIndex();
             if (currentIndex == -1)
             {
-                arr[0].isChoosen = true;
+                arr[0].IsChoosen = true;
             }
 
         }

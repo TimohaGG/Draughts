@@ -14,7 +14,7 @@ namespace DraughtsComponents
             internal char skin;
             internal int x;
             internal int y;
-            public bool isChoosen { get; internal set; }
+            public bool IsChoosen { get; internal set; }
 
             //----------constructor----------
             public Draught(int x, int y, char skin)
@@ -22,10 +22,10 @@ namespace DraughtsComponents
                 this.x = x;
                 this.y = y;
                 this.skin = skin;
-                isChoosen = false;
+                IsChoosen = false;
             }
             //---------enums----------
-            public enum _direction
+            public enum Direction
             {
                 UP_R,
                 UP_L,
@@ -35,13 +35,13 @@ namespace DraughtsComponents
 
             //----------methods----------
            
-            public bool isMovable(_direction direction, Player player, char EnemySymbol)
+            public bool IsMovable(Direction direction, char EnemySymbol)
             {
-                int xTmp = x, yTmp=y;
+                
                 char[,] field = PlayingField.fieldArr;
                 switch (direction)
                 {
-                    case _direction.UP_R:
+                    case Direction.UP_R:
                         {
 
                             if (y - 1 < 0 || x + 1 > Field.fieldSize)
@@ -53,7 +53,7 @@ namespace DraughtsComponents
                             else
                                 return false;
                         }
-                    case _direction.UP_L:
+                    case Direction.UP_L:
                         {
                             if (y - 1 < 0 || x - 1 < 0)
                                 return false;
@@ -65,7 +65,7 @@ namespace DraughtsComponents
                                 return false;
                         }
                         break;
-                    case _direction.DOWN_R:
+                    case Direction.DOWN_R:
                         {
                             if (y + 2 >= Field.fieldSize || x + 2 >= Field.fieldSize)
                                 return false;
@@ -74,7 +74,7 @@ namespace DraughtsComponents
                             else return false;
                         }
                         
-                    case _direction.DOWN_L:
+                    case Direction.DOWN_L:
                         {
                             if(y+2 >= Field.fieldSize || x - 2<0)
                                 return false;
@@ -88,14 +88,14 @@ namespace DraughtsComponents
                 }
                 return true;
             }
-             public bool killIsNear(char enemySymbol, ref _direction direction)
+             public bool KillIsNear(char enemySymbol, ref Direction direction)
              {
                 char[,] fieldTmp = PlayingField.fieldArr;
                 if (y - 2 >= 0 && x + 2 < Field.fieldSize)
                 {
                     if (fieldTmp[y - 1, x + 1] == enemySymbol && fieldTmp[y - 2, x + 2] == '-')
                     {
-                        direction = _direction.UP_R;
+                        direction = Direction.UP_R;
                         return true;
                     }
                 }
@@ -103,7 +103,7 @@ namespace DraughtsComponents
                 {
                     if (fieldTmp[y - 1, x - 1] == enemySymbol && fieldTmp[y - 2, x - 2] == '-')
                     {
-                        direction = _direction.UP_L;
+                        direction = Direction.UP_L;
                         return true;
                     }
                 }
@@ -111,7 +111,7 @@ namespace DraughtsComponents
                 {
                     if (fieldTmp[y + 1, x + 1] == enemySymbol && fieldTmp[y + 2, x + 2] == '-')
                     {
-                        direction = _direction.DOWN_R;
+                        direction = Direction.DOWN_R;
                         return true;
                     }
                 }
@@ -119,7 +119,7 @@ namespace DraughtsComponents
                 {
                     if (fieldTmp[y + 1, x - 1] == enemySymbol && fieldTmp[y + 2, x - 1] == '-')
                     {
-                        direction = _direction.DOWN_L;
+                        direction = Direction.DOWN_L;
                         return true;
                     }
                 }

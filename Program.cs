@@ -36,12 +36,12 @@ namespace Draughts_v2
             } while (choise <= 0 || choise > 4);
             return choise-1;
         }
-        static bool UseDraught(ref Player player1,ref Player player2, int choosenIndex, ref Player.Draught._direction choise)
+        static bool UseDraught(ref Player player1,ref Player player2, int choosenIndex, ref Player.Draught.Direction choise)
         {
-            if (player1.arr[choosenIndex].isMovable(choise, player1, player2.skin))
+            if (player1.arr[choosenIndex].IsMovable(choise, player2.skin))
             {
                 player1.MooveDraught(choise, ref player1.arr[choosenIndex]);
-                if (player1.isKill(player2.arr))
+                if (player1.IsKill(player2.arr))
                 {
                     if (!player2.DeleteDraughtFromArr(player1.arr[choosenIndex]))
                     {
@@ -50,7 +50,7 @@ namespace Draughts_v2
                     }
                     player1.MooveDraught(choise, ref player1.arr[choosenIndex]);
                     Player.PlayingField.DeployDraughts(player1.arr, player2.arr);
-                    if (player1.arr[choosenIndex].killIsNear(player2.skin, ref choise))
+                    if (player1.arr[choosenIndex].KillIsNear(player2.skin, ref choise))
                     {
                         return true;
                     }
@@ -77,7 +77,7 @@ namespace Draughts_v2
             key = Console.ReadKey().Key;
             if (key == ConsoleKey.Enter)
             {
-                Player.Draught._direction choise = (Player.Draught._direction)ChooseDirection();
+                Player.Draught.Direction choise = (Player.Draught.Direction)ChooseDirection();
 
                 while( UseDraught(ref player1,ref player2, choosenIndex, ref choise))
                 {
