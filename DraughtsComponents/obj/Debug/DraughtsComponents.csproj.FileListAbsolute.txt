@@ -16,3 +16,9 @@ C:\Users\timoh\OneDrive\Документы\Draught\DraughtsComponents\obj\Debug\
 C:\Users\timoh\OneDrive\Документы\Draught\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.CoreCompileInputs.cache
 C:\Users\timoh\OneDrive\Документы\Draught\DraughtsComponents\obj\Debug\DraughtsComponents.dll
 C:\Users\timoh\OneDrive\Документы\Draught\DraughtsComponents\obj\Debug\DraughtsComponents.pdb
+D:\VS Projects\Draughts\DraughtsComponents\bin\Debug\DraughtsComponents.dll
+D:\VS Projects\Draughts\DraughtsComponents\bin\Debug\DraughtsComponents.pdb
+D:\VS Projects\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.AssemblyReference.cache
+D:\VS Projects\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.CoreCompileInputs.cache
+D:\VS Projects\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.dll
+D:\VS Projects\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.pdb

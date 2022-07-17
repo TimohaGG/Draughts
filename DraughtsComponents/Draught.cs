@@ -38,7 +38,7 @@ namespace DraughtsComponents
             public bool isMovable(_direction direction, Player player, char EnemySymbol)
             {
                 int xTmp = x, yTmp=y;
-                char[,] field = Player.PlayingField.fieldArr;
+                char[,] field = PlayingField.fieldArr;
                 switch (direction)
                 {
                     case _direction.UP_R:
@@ -88,7 +88,44 @@ namespace DraughtsComponents
                 }
                 return true;
             }
-           
+             public bool killIsNear(char enemySymbol, ref _direction direction)
+             {
+                char[,] fieldTmp = PlayingField.fieldArr;
+                if (y - 2 >= 0 && x + 2 < Field.fieldSize)
+                {
+                    if (fieldTmp[y - 1, x + 1] == enemySymbol && fieldTmp[y - 2, x + 2] == '-')
+                    {
+                        direction = _direction.UP_R;
+                        return true;
+                    }
+                }
+                if (y - 2 >= 0 && x - 2 >= 0)
+                {
+                    if (fieldTmp[y - 1, x - 1] == enemySymbol && fieldTmp[y - 2, x - 2] == '-')
+                    {
+                        direction = _direction.UP_L;
+                        return true;
+                    }
+                }
+                if (y + 2 < Field.fieldSize && x + 2 < Field.fieldSize)
+                {
+                    if (fieldTmp[y + 1, x + 1] == enemySymbol && fieldTmp[y + 2, x + 2] == '-')
+                    {
+                        direction = _direction.DOWN_R;
+                        return true;
+                    }
+                }
+                if (y + 2 < Field.fieldSize && x - 2 >= 0)
+                {
+                    if (fieldTmp[y + 1, x - 1] == enemySymbol && fieldTmp[y + 2, x - 1] == '-')
+                    {
+                        direction = _direction.DOWN_L;
+                        return true;
+                    }
+                }
+               
+                return false;
+            }
             
         }
     }
