@@ -36,35 +36,28 @@ namespace Draughts_v2
             } while (choise <= 0 || choise > 4);
             return choise-1;
         }
-        static bool UseDraught(ref Player player1,ref Player player2, int choosenIndex, Player.Draught._direction choise)
+        static bool UseDraught(ref Player player1,ref Player player2, int choosenIndex, ref Player.Draught._direction choise)
         {
-            
             if (player1.arr[choosenIndex].isMovable(choise, player1, player2.skin))
             {
-
                 player1.MooveDraught(choise, ref player1.arr[choosenIndex]);
                 if (player1.isKill(player2.arr))
                 {
-                    player2.DeleteDraughtFromArr(player1.arr[choosenIndex]);
+                    if (!player2.DeleteDraughtFromArr(player1.arr[choosenIndex]))
+                    {
+
+                        return false;
+                    }
                     player1.MooveDraught(choise, ref player1.arr[choosenIndex]);
                     Player.PlayingField.DeployDraughts(player1.arr, player2.arr);
                     if (player1.arr[choosenIndex].killIsNear(player2.skin, ref choise))
                     {
-                        UseDraught(ref player1, ref player2, choosenIndex, choise);
-                        //player1.MooveDraught(choise, ref player1.arr[choosenIndex]);
+                        return true;
                     }
-                    //else
-                    //{
-                    //    player1.MooveDraught(choise, ref player1.arr[choosenIndex]);
-                    //}
-
                 }
                 Console.Clear();
                 Player.PlayingField.DeployDraughts(player1.arr, player2.arr);
                 Player.PrintField(player1.arr[choosenIndex]);
-
-
-               
                 return false;
             }
             else
@@ -84,14 +77,16 @@ namespace Draughts_v2
             key = Console.ReadKey().Key;
             if (key == ConsoleKey.Enter)
             {
-                //int choise=ChooseDirection();
                 Player.Draught._direction choise = (Player.Draught._direction)ChooseDirection();
-                return UseDraught(ref player1,ref player2, choosenIndex, choise);
+
+                while( UseDraught(ref player1,ref player2, choosenIndex, ref choise))
+                {
+                }
+                return false;
                 
             }
             else
             {
-
                 player1.MoveSelection(key);
                 Console.SetCursorPosition(0, 0);
                 return true;

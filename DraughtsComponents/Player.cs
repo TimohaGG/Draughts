@@ -179,7 +179,7 @@ namespace DraughtsComponents
             Array.Reverse(arr);
         }
 
-        public void DeleteDraughtFromArr( Draught draught)
+        public bool DeleteDraughtFromArr( Draught draught)
         {
             int index;
             for (index = 0; index < draughtsAmount; index++)
@@ -194,8 +194,13 @@ namespace DraughtsComponents
             tmp.RemoveAt(index); // Удаление элемента
             arr = tmp.ToArray(); // Преобразование в массив
             draughtsAmount--;
+            if(draughtsAmount == 0)
+            {
+                return false;
+            }
             if (draught.isChoosen == true)
                 arr[0].isChoosen = true;
+            return true;
         }
         public void ResetChoosenIndex()
         {
