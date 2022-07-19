@@ -95,32 +95,40 @@ namespace Draughts_v2
         }
         static void Main(string[] args)
         {
-            
             Player player1 = new Player("Tim", 'w', 0, 5);
-           
             Player player2 = new Player("Makar", 'b', 1, 0);
-           
             Player.PlayingField = new Field(player1.arr, player2.arr);
+
+            Console.WriteLine("1. Новая игра");
+            Console.WriteLine("2. Продолжить");
+            int choise= int.Parse(Console.ReadLine());
+            if (choise == 2)
+            {
+                player1=Player.LoadGame("player1.xml");
+                player2=Player.LoadGame("player2.xml");
+            }
+            Console.Clear();
             Player.PlayingField.DeployDraughts(player1.arr, player2.arr);
-            player1.SaveGame("DRAUGHT.xml");
-            Process.Start("../../xmlNormalizer\\xmlNormalizer.exe");
+            //Player.PrintField(player1.arr[player1.GetChoosenDraughtIndex()]);
+
             while (true)
             {
-                while(PlayerTurn(player1,player2))
-                {
-                    player1.SaveGame("player1");
-                    player2.SaveGame("player2");
-                }
-                Pause();
-                ReverseAll(ref player1, ref player2);
-                while (PlayerTurn(player2, player1))
-                {
-                    player1.SaveGame("player1");
-                    player2.SaveGame("player2");
-                }
-                Pause();
-                ReverseAll(ref player1, ref player2);
                 
+                do{
+                    player1.SaveGame("player1.xml");
+                    player2.SaveGame("player2.xml");
+                } while (PlayerTurn(player1, player2)) ;
+                    Pause();
+                ReverseAll(ref player1, ref player2);
+
+                do
+                {
+                    player1.SaveGame("player1.xml");
+                    player2.SaveGame("player2.xml");
+                } while (PlayerTurn(player2, player1));
+                    Pause();
+                ReverseAll(ref player1, ref player2);
+                //Process.Start("../../xmlNormalizer\\xmlNormalizer.exe");
             }
             
            

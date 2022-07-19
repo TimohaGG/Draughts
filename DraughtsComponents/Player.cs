@@ -223,11 +223,6 @@ namespace DraughtsComponents
         }
         public void SaveGame(string filename)
         {
-            //var playerList = new List<Draught>();
-            //for (int i = 0; i < draughtsAmount; i++)
-            //{
-            //    playerList.Add(arr[i]);
-            //}    
             var playerList = new List<Player>();
             playerList.Add(this);
             DataContractSerializer serializer = new DataContractSerializer(typeof(List<Player>));
@@ -235,6 +230,18 @@ namespace DraughtsComponents
             XmlWriter writer = XmlWriter.Create(@"../../"+ filename);
             serializer.WriteObject(writer, playerList);
             writer.Close();
+        }
+
+        static public Player LoadGame(string filename)
+        {
+            DataContractSerializer serializer = new DataContractSerializer(typeof(List<Player>));
+            XmlReader reader = XmlReader.Create(@"../../"+filename);
+            List<Player> PlayerReady= (List<Player>)serializer.ReadObject(reader);
+
+            Player[] player=new Player[1];
+            PlayerReady.CopyTo(player);
+            reader.Close();
+            return player[0];
         }
     }
 }
