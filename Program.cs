@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DraughtsComponents;
+using System.Diagnostics;
 namespace Draughts_v2
 {
     internal class Program
@@ -101,18 +102,21 @@ namespace Draughts_v2
            
             Player.PlayingField = new Field(player1.arr, player2.arr);
             Player.PlayingField.DeployDraughts(player1.arr, player2.arr);
+            player1.SaveGame("DRAUGHT.xml");
+            Process.Start("../../xmlNormalizer\\xmlNormalizer.exe");
             while (true)
             {
                 while(PlayerTurn(player1,player2))
                 {
-                    
+                    player1.SaveGame("player1");
+                    player2.SaveGame("player2");
                 }
                 Pause();
                 ReverseAll(ref player1, ref player2);
                 while (PlayerTurn(player2, player1))
                 {
-                    
-
+                    player1.SaveGame("player1");
+                    player2.SaveGame("player2");
                 }
                 Pause();
                 ReverseAll(ref player1, ref player2);

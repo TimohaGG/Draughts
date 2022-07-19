@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,12 +9,17 @@ namespace DraughtsComponents
 {
     public partial class Player
     {
+        [DataContractAttribute]
         public partial class Draught
         {
             //----------fields\props---------
+            [DataMemberAttribute]
             internal char skin;
+           [DataMemberAttribute]
             internal int x;
+            [DataMemberAttribute]
             internal int y;
+            [DataMemberAttribute]
             public bool IsChoosen { get; internal set; }
 
             //----------constructor----------

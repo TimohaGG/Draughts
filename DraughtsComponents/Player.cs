@@ -1,21 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace DraughtsComponents
 {
+    [DataContractAttribute]
     public partial class Player
     {
         //---------inserted class---------
         public partial class Draught{}
 
         //----------fields/props----------
+        [DataMemberAttribute]
         public int draughtsAmount=12;
+        [DataMemberAttribute]
         public Draught[] arr;
+        [DataMemberAttribute]
         public string name;
+        [DataMemberAttribute]
         public char skin;
+       
         static public Field PlayingField;
 
         //----------constructor----------
@@ -48,6 +56,8 @@ namespace DraughtsComponents
             this.skin = skin;
             arr[0].IsChoosen = true;
         }
+
+        public Player() { }
         //---------methods----------
 
         static public void PrintField(Draught choosen)
@@ -210,6 +220,21 @@ namespace DraughtsComponents
                 arr[0].IsChoosen = true;
             }
 
+        }
+        public void SaveGame(string filename)
+        {
+            //var playerList = new List<Draught>();
+            //for (int i = 0; i < draughtsAmount; i++)
+            //{
+            //    playerList.Add(arr[i]);
+            //}    
+            var playerList = new List<Player>();
+            playerList.Add(this);
+            DataContractSerializer serializer = new DataContractSerializer(typeof(List<Player>));
+
+            XmlWriter writer = XmlWriter.Create(@"../../"+ filename);
+            serializer.WriteObject(writer, playerList);
+            writer.Close();
         }
     }
 }
