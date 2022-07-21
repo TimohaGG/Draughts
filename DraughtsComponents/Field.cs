@@ -48,20 +48,6 @@ namespace DraughtsComponents
             }
         }
        
-        public char[,] Reverse()
-        {
-           char[,] tmp=new char[fieldSize, fieldSize];
-            for (int startY = 0,finishY=fieldSize-1; startY < fieldSize; startY++, finishY--)
-            {
-                for (int startX = 0, finishX=fieldSize-1; startX < fieldSize; startX++,finishX--)
-                {
-                    tmp[startY,startX]=fieldArr[finishY,finishX];
-                }
-            }
-            fieldArr = tmp;
-           
-            return fieldArr;
-            
-        }
+        
     }
 }

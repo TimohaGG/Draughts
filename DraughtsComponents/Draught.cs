@@ -20,6 +20,8 @@ namespace DraughtsComponents
             [DataMemberAttribute]
             internal int y;
             [DataMemberAttribute]
+            internal bool isQueen = false;
+            [DataMemberAttribute]
             public bool IsChoosen { get; internal set; }
 
             //----------constructor----------
@@ -77,6 +79,8 @@ namespace DraughtsComponents
                                 return false;
                             else if (field[y + 1, x + 1] == EnemySymbol && field[y + 2, x + 2] == '-')
                                 return true;
+                            else if (isQueen && field[y + 1, x + 1] == '-')
+                                return true;
                             else return false;
                         }
                         
@@ -85,6 +89,8 @@ namespace DraughtsComponents
                             if(y+2 >= Field.fieldSize || x - 2<0)
                                 return false;
                             if (field[y + 1, x - 1] == EnemySymbol && field[y + 2, x - 1] == '-')
+                                return true;
+                            else if (isQueen && field[y + 1, x - 1] == '-')
                                 return true;
                             else return false;
                         }

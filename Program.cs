@@ -17,6 +17,12 @@ namespace Draughts_v2
             player1.ReverseArr();
             Player.PlayingField.DeployDraughts(player1.arr, player2.arr);
         }
+        static void Save(in Player player1, in Player player2)
+        {
+            player1.SaveGame("player1.xml");
+            player2.SaveGame("player2.xml");
+            
+        }
         static void Pause()
         {
             Console.WriteLine("Нажмите Enter что бы продолжить!");
@@ -95,43 +101,60 @@ namespace Draughts_v2
         }
         static void Main(string[] args)
         {
-            Player player1 = new Player("Tim", 'w', 0, 5);
-            Player player2 = new Player("Makar", 'b', 1, 0);
+            Player player1 = new Player("unknown", 'w', 0, 5);
+            Player player2 = new Player("unknown", 'b', 1, 0);
             Player.PlayingField = new Field(player1.arr, player2.arr);
-
+            Console.WriteLine("----------ШАШКИ----------");
             Console.WriteLine("1. Новая игра");
             Console.WriteLine("2. Продолжить");
+
             int choise= int.Parse(Console.ReadLine());
-            if (choise == 2)
+            switch (choise)
             {
-                player1=Player.LoadGame("player1.xml");
-                player2=Player.LoadGame("player2.xml");
+                case 1: {
+                        player1.SetName();
+                        player2.SetName();
+                    }break;
+                case 2: {
+                        player1 = Player.LoadGame("player1.xml");
+                        player2 = Player.LoadGame("player2.xml");
+                    }
+                    break;
             }
-            Console.Clear();
-            Player.PlayingField.DeployDraughts(player1.arr, player2.arr);
-            //Player.PrintField(player1.arr[player1.GetChoosenDraughtIndex()]);
-
-            while (true)
-            {
-                
-                do{
-                    player1.SaveGame("player1.xml");
-                    player2.SaveGame("player2.xml");
-                } while (PlayerTurn(player1, player2)) ;
-                    Pause();
-                ReverseAll(ref player1, ref player2);
-
-                do
-                {
-                    player1.SaveGame("player1.xml");
-                    player2.SaveGame("player2.xml");
-                } while (PlayerTurn(player2, player1));
-                    Pause();
-                ReverseAll(ref player1, ref player2);
-                //Process.Start("../../xmlNormalizer\\xmlNormalizer.exe");
-            }
-            
            
+            Console.Clear();
+
+            Player.PlayingField.DeployDraughts(player1.arr, player2.arr);
+           
+
+            while (!player1.isDefeeted()&&!player2.isDefeeted())
+            {
+                if (!player1.isDefeeted())
+                {
+                    do
+                    {
+
+                        Save(in player1, in player2);
+                    } while (PlayerTurn(player1, player2));
+                    Pause();
+                    ReverseAll(ref player1, ref player2);
+                }
+
+                if (!player2.isDefeeted())
+                {
+                    do
+                    {
+                        Save(in player1, in player2);
+                    } while (PlayerTurn(player2, player1));
+
+                    Pause();
+
+                    ReverseAll(ref player1, ref player2);
+                }              
+                
+            }
+            string winerName = !player1.isDefeeted() ? player1.name : player2.name;
+            Console.WriteLine("Победитель: "+ winerName);
             Console.Read();
         }
     }

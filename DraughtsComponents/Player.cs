@@ -59,7 +59,11 @@ namespace DraughtsComponents
 
         public Player() { }
         //---------methods----------
-
+        public void SetName()
+        {
+            Console.WriteLine("Введите имя игрока 1");
+            name=Console.ReadLine();
+        }
         static public void PrintField(Draught choosen)
         {
             for (int i = 0; i < Field.fieldSize; i++)
@@ -174,6 +178,10 @@ namespace DraughtsComponents
                     draught.x--;
                     break;
             }
+            if(draught.y == 0 || draught.y == 7)
+            {
+                draught.isQueen = true;
+            }
         }
 
         public void Reverse()
@@ -196,7 +204,7 @@ namespace DraughtsComponents
             {
                 if (arr[index].x == draught.x && arr[index].y == draught.y)
                 {
-                    Console.WriteLine("Нашел кого удалять!");
+                    
                     break;
                 }
             }
@@ -212,15 +220,7 @@ namespace DraughtsComponents
                 arr[0].IsChoosen = true;
             return true;
         }
-        public void ResetChoosenIndex()
-        {
-            int currentIndex = GetChoosenDraughtIndex();
-            if (currentIndex == -1)
-            {
-                arr[0].IsChoosen = true;
-            }
-
-        }
+        
         public void SaveGame(string filename)
         {
             var playerList = new List<Player>();
@@ -242,6 +242,11 @@ namespace DraughtsComponents
             PlayerReady.CopyTo(player);
             reader.Close();
             return player[0];
+        }
+
+        public bool isDefeeted()
+        {
+            return draughtsAmount == 0;
         }
     }
 }
