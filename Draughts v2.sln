@@ -5,7 +5,7 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draughts v2", "Draughts v2.csproj", "{E76A0A31-6648-443F-8A70-D458510B14C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DraughtsComponents", "..\DraughtsComponents\DraughtsComponents.csproj", "{D0684243-62BD-4B51-931C-8CF272949833}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DraughtsComponents", "DraughtsComponents\DraughtsComponents.csproj", "{D0684243-62BD-4B51-931C-8CF272949833}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

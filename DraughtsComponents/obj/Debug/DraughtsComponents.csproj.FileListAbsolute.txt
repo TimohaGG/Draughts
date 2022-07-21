@@ -4,3 +4,39 @@ C:\Users\timoh\OneDrive\Рабочий стол\DraughtsComponents\obj\Debug\Dra
 C:\Users\timoh\OneDrive\Рабочий стол\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.CoreCompileInputs.cache
 C:\Users\timoh\OneDrive\Рабочий стол\DraughtsComponents\obj\Debug\DraughtsComponents.dll
 C:\Users\timoh\OneDrive\Рабочий стол\DraughtsComponents\obj\Debug\DraughtsComponents.pdb
+C:\Users\timoh\OneDrive\Документы\GitHub\Draughts-v2\DraughtsComponents\bin\Debug\DraughtsComponents.dll
+C:\Users\timoh\OneDrive\Документы\GitHub\Draughts-v2\DraughtsComponents\bin\Debug\DraughtsComponents.pdb
+C:\Users\timoh\OneDrive\Документы\GitHub\Draughts-v2\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.AssemblyReference.cache
+C:\Users\timoh\OneDrive\Документы\GitHub\Draughts-v2\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.CoreCompileInputs.cache
+C:\Users\timoh\OneDrive\Документы\GitHub\Draughts-v2\DraughtsComponents\obj\Debug\DraughtsComponents.dll
+C:\Users\timoh\OneDrive\Документы\GitHub\Draughts-v2\DraughtsComponents\obj\Debug\DraughtsComponents.pdb
+C:\Users\timoh\OneDrive\Документы\Draught\DraughtsComponents\bin\Debug\DraughtsComponents.dll
+C:\Users\timoh\OneDrive\Документы\Draught\DraughtsComponents\bin\Debug\DraughtsComponents.pdb
+C:\Users\timoh\OneDrive\Документы\Draught\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.AssemblyReference.cache
+C:\Users\timoh\OneDrive\Документы\Draught\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.CoreCompileInputs.cache
+C:\Users\timoh\OneDrive\Документы\Draught\DraughtsComponents\obj\Debug\DraughtsComponents.dll
+C:\Users\timoh\OneDrive\Документы\Draught\DraughtsComponents\obj\Debug\DraughtsComponents.pdb
+D:\VS Projects\Draughts\DraughtsComponents\bin\Debug\DraughtsComponents.dll
+D:\VS Projects\Draughts\DraughtsComponents\bin\Debug\DraughtsComponents.pdb
+D:\VS Projects\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.AssemblyReference.cache
+D:\VS Projects\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.CoreCompileInputs.cache
+D:\VS Projects\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.dll
+D:\VS Projects\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.pdb
+C:\Users\timoh\OneDrive\Рабочий стол\Dra\DraughtsComponents\bin\Debug\DraughtsComponents.dll
+C:\Users\timoh\OneDrive\Рабочий стол\Dra\DraughtsComponents\bin\Debug\DraughtsComponents.pdb
+C:\Users\timoh\OneDrive\Рабочий стол\Dra\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.AssemblyReference.cache
+C:\Users\timoh\OneDrive\Рабочий стол\Dra\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.CoreCompileInputs.cache
+C:\Users\timoh\OneDrive\Рабочий стол\Dra\DraughtsComponents\obj\Debug\DraughtsComponents.dll
+C:\Users\timoh\OneDrive\Рабочий стол\Dra\DraughtsComponents\obj\Debug\DraughtsComponents.pdb
+C:\Users\timoh\OneDrive\Рабочий стол\Draughts\DraughtsComponents\bin\Debug\DraughtsComponents.dll
+C:\Users\timoh\OneDrive\Рабочий стол\Draughts\DraughtsComponents\bin\Debug\DraughtsComponents.pdb
+C:\Users\timoh\OneDrive\Рабочий стол\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.AssemblyReference.cache
+C:\Users\timoh\OneDrive\Рабочий стол\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.CoreCompileInputs.cache
+C:\Users\timoh\OneDrive\Рабочий стол\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.dll
+C:\Users\timoh\OneDrive\Рабочий стол\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.pdb
+C:\Users\timoh\OneDrive\Документы\GitHub\Draughts\DraughtsComponents\bin\Debug\DraughtsComponents.dll
+C:\Users\timoh\OneDrive\Документы\GitHub\Draughts\DraughtsComponents\bin\Debug\DraughtsComponents.pdb
+C:\Users\timoh\OneDrive\Документы\GitHub\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.AssemblyReference.cache
+C:\Users\timoh\OneDrive\Документы\GitHub\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.CoreCompileInputs.cache
+C:\Users\timoh\OneDrive\Документы\GitHub\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.dll
+C:\Users\timoh\OneDrive\Документы\GitHub\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.pdb
