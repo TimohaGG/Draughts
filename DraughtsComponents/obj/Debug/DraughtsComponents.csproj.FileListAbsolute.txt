@@ -40,3 +40,9 @@ C:\Users\timoh\OneDrive\Документы\GitHub\Draughts\DraughtsComponents\ob
 C:\Users\timoh\OneDrive\Документы\GitHub\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.CoreCompileInputs.cache
 C:\Users\timoh\OneDrive\Документы\GitHub\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.dll
 C:\Users\timoh\OneDrive\Документы\GitHub\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.pdb
+D:\Draughts\DraughtsComponents\bin\Debug\DraughtsComponents.dll
+D:\Draughts\DraughtsComponents\bin\Debug\DraughtsComponents.pdb
+D:\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.AssemblyReference.cache
+D:\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.csproj.CoreCompileInputs.cache
+D:\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.dll
+D:\Draughts\DraughtsComponents\obj\Debug\DraughtsComponents.pdb
